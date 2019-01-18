@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Ampersand_Stores::top_level"
+             module="Ampersand_Stores"
+             resource="Ampersand_Stores::Store"
+             parent="Magento_Backend::stores"
+             sortOrder="9999"
+             title="Retail Stores"/>
+
+        <add action="ampersand_stores/store/index"
+             id="Ampersand_Stores::ampersand_stores_stores"
+             module="Ampersand_Stores"
+             parent="Ampersand_Stores::top_level"
+             resource="Magento_Backend::content"
+             sortOrder="9999"
+             title="Manage Stores"/>
+    </menu>
+</config>

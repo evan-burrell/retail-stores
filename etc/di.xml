@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <preference for="Ampersand\Stores\Api\Data\StoreInterface" type="Ampersand\Stores\Model\Store"/>
+    <preference for="Ampersand\Stores\Api\StoreRepositoryInterface" type="Ampersand\Stores\Model\StoreRepository"/>
+
+    <virtualType name="Ampersand\Stores\Model\ResourceModel\Store\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">ampersand_stores_store</argument>
+            <argument name="resourceModel" xsi:type="string">
+                Ampersand\Stores\Model\ResourceModel\Store\Collection
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="ampersand_stores_store_grid_data_source" xsi:type="string">
+                    Ampersand\Stores\Model\ResourceModel\Store\Grid\Collection
+                </item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Ampersand\Stores\Model\Store\Type\Registry">
+        <arguments>
+            <argument name="types" xsi:type="array">
+                <item name="product" xsi:type="string">Product Type Store</item>
+                <item name="promotion" xsi:type="string">Promotion Store</item>
+                <item name="new_in" xsi:type="string">New In Store</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

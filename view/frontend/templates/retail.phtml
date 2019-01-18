@@ -1,0 +1,57 @@
+<style>
+.grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+#card {
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);
+    margin: 1rem;
+}
+
+.flex-between{
+    display: flex;
+    justify-content: space-between;
+}
+
+.font-thin{
+    font-weight: 200;
+}
+
+@media (max-width: 768px) {
+    .grid{
+        display: inline-grid;
+        grid-template-columns: repeat(1, 1fr);
+        width: 100%;
+    }
+}
+</style>
+
+<?php
+$stores = $this->getCollection()->getData();
+?>
+
+<div class="grid">
+<?php foreach ($stores as $store) : ?>
+<div id="card">
+    <a href="<?php echo $this->getSingleStoreUrl($store['store_id']) ?>">
+                <div class="flex-between">
+                    <strong><?= $store['name'] ?></strong>
+                    <?php $baseUrl = "https://www.google.com/maps/search/?api=1&query={$store['latitude']},{$store['longitude']}" ?>
+                    <a href="<?php echo $baseUrl ?>"><img src="https://img.icons8.com/small/16/000000/marker.png"></a>
+                </div>
+                <div class="font-thin">
+                    <p><?= $store['address_line_1'] ?></p>
+                    <?php if (isset($_formatedOptionValue['address_line_2'])) : ?>
+                    <p><?= $store['address_line_2'] ?></p>
+                    <?php endif ?>
+                </div>
+                <div class="flex-between">
+                    <p><?= $store['postcode'] ?></p>
+                    <p><?php echo $this->formatHours($store['opening']); ?> - <?php echo $this->formatHours($store['closing']); ?></p>
+                </div>
+        </div>
+    </a>
+<?php endforeach ?>
+</div>
