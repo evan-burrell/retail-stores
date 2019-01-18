@@ -3,9 +3,9 @@
 namespace Ampersand\Stores\Setup;
 
 use Ampersand\Stores\Model\ResourceModel\Store;
-use Magento\Framework\Setup\SchemaSetupInterface;
 use Magento\Framework\Setup\InstallSchemaInterface;
 use Magento\Framework\Setup\ModuleContextInterface;
+use Magento\Framework\Setup\SchemaSetupInterface;
 
 class InstallSchema implements InstallSchemaInterface
 {
@@ -25,7 +25,7 @@ class InstallSchema implements InstallSchemaInterface
             [
                 'identity' => true,
                 'nullable' => false,
-                'primary' => true,
+                'primary'  => true,
                 'unsigned' => true,
             ],
             'Store ID'

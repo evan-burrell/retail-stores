@@ -2,20 +2,20 @@
 
 namespace Ampersand\Stores\Model;
 
-use Magento\Framework\Api\SortOrder;
-use Magento\Framework\Api\DataObjectHelper;
 use Ampersand\Stores\Api\Data\StoreInterface;
-use Magento\Store\Model\StoreManagerInterface;
-use Ampersand\Stores\Api\StoreRepositoryInterface;
-use Magento\Framework\Api\SearchCriteriaInterface;
 use Ampersand\Stores\Api\Data\StoreInterfaceFactory;
-use Magento\Framework\Reflection\DataObjectProcessor;
-use Magento\Framework\Exception\CouldNotSaveException;
-use Magento\Framework\Exception\NoSuchEntityException;
-use Magento\Framework\Api\SearchResultsInterfaceFactory;
-use Magento\Framework\Exception\CouldNotDeleteException;
+use Ampersand\Stores\Api\StoreRepositoryInterface;
 use Ampersand\Stores\Model\ResourceModel\Store as ResourceStore;
 use Ampersand\Stores\Model\ResourceModel\Store\CollectionFactory as StoreCollectionFactory;
+use Magento\Framework\Api\DataObjectHelper;
+use Magento\Framework\Api\SearchCriteriaInterface;
+use Magento\Framework\Api\SearchResultsInterfaceFactory;
+use Magento\Framework\Api\SortOrder;
+use Magento\Framework\Exception\CouldNotDeleteException;
+use Magento\Framework\Exception\CouldNotSaveException;
+use Magento\Framework\Exception\NoSuchEntityException;
+use Magento\Framework\Reflection\DataObjectProcessor;
+use Magento\Store\Model\StoreManagerInterface;
 
 class StoreRepository implements StoreRepositoryInterface
 {
@@ -91,7 +91,7 @@ class StoreRepository implements StoreRepositoryInterface
                     }
 
                     $fields[] = $filter->getField();
-                    $condition = $filter->getConditionType() ? : 'eq';
+                    $condition = $filter->getConditionType() ?: 'eq';
                     $conditions[] = [$condition => $filter->getValue()];
                 }
 

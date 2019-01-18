@@ -14,7 +14,6 @@ interface StoreInterface
     const OPENING = 'opening';
     const CLOSING = 'closing';
 
-
     public function getStoreId();
 
     public function setStoreId($storeId);

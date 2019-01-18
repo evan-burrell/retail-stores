@@ -3,7 +3,6 @@
 namespace Ampersand\Stores\Ui\Component\Listing\Column;
 
 use Magento\Framework\UrlInterface;
-use Magento\Framework\View\Element\UiComponent;
 use Magento\Framework\View\Element\UiComponentFactory;
 
 class StoreActions extends \Magento\Ui\Component\Listing\Columns\Column
@@ -26,9 +25,10 @@ class StoreActions extends \Magento\Ui\Component\Listing\Columns\Column
     }
 
     /**
-     * Prepare Data Source
+     * Prepare Data Source.
      *
      * @param array $dataSource
+     *
      * @return array
      */
     public function prepareDataSource(array $dataSource)
@@ -47,24 +47,24 @@ class StoreActions extends \Magento\Ui\Component\Listing\Columns\Column
                     'href' => $this->urlBuilder->getUrl(
                         static::URL_PATH_EDIT,
                         [
-                            'store_id' => $item['store_id']
+                            'store_id' => $item['store_id'],
                         ]
                     ),
-                    'label' => __('Edit')
+                    'label' => __('Edit'),
                 ],
                 'delete' => [
                     'href' => $this->urlBuilder->getUrl(
                         static::URL_PATH_DELETE,
                         [
-                            'store_id' => $item['store_id']
+                            'store_id' => $item['store_id'],
                         ]
                     ),
-                    'label' => __('Delete'),
+                    'label'   => __('Delete'),
                     'confirm' => [
-                        'title' => __('Delete "${ $.$data.name }"'),
-                        'message' => __('Are you sure you want to delete a "${ $.$data.name }" store record?')
-                    ]
-                ]
+                        'title'   => __('Delete "${ $.$data.name }"'),
+                        'message' => __('Are you sure you want to delete a "${ $.$data.name }" store record?'),
+                    ],
+                ],
             ];
         }
 

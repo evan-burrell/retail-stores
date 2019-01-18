@@ -9,7 +9,7 @@ class RetailStores extends \Magento\Framework\View\Element\Template
 {
     private $_storeFactory;
 
-    public function __construct(Context $context, StoreFactory $storeFactory, array $data = array())
+    public function __construct(Context $context, StoreFactory $storeFactory, array $data = [])
     {
         $this->_storeFactory = $storeFactory;
         parent::__construct($context, $data);
@@ -22,7 +22,7 @@ class RetailStores extends \Magento\Framework\View\Element\Template
 
     public function getSingleStoreUrl($storeId)
     {
-        return '/stores/index/view/store_id/' . $storeId;
+        return '/stores/index/view/store_id/'.$storeId;
     }
 
     public function formatHours($time)
@@ -34,6 +34,7 @@ class RetailStores extends \Magento\Framework\View\Element\Template
     {
         parent::_prepareLayout();
         $this->pageConfig->getTitle()->set(__('Retail Stores'));
+
         return $this;
     }
 }

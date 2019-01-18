@@ -2,13 +2,13 @@
 
 namespace Ampersand\Stores\Setup;
 
-use Magento\Store\Model\Store;
+use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Framework\Setup\InstallDataInterface;
 use Magento\Framework\Setup\ModuleContextInterface;
 use Magento\Framework\Setup\ModuleDataSetupInterface;
-use Magento\Framework\App\Config\ScopeConfigInterface;
-use Magento\Theme\Model\ResourceModel\Theme\CollectionFactory;
+use Magento\Store\Model\Store;
 use Magento\Theme\Model\Config;
+use Magento\Theme\Model\ResourceModel\Theme\CollectionFactory;
 
 class InstallData implements InstallDataInterface
 {

@@ -2,8 +2,8 @@
 
 namespace Ampersand\Stores\Model;
 
-use Magento\Framework\Model\AbstractModel;
 use Ampersand\Stores\Api\Data\StoreInterface;
+use Magento\Framework\Model\AbstractModel;
 
 class Store extends AbstractModel implements StoreInterface
 {

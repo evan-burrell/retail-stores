@@ -2,14 +2,12 @@
 
 namespace Ampersand\Stores\Model\Store;
 
-use Magento\Store\Model\StoreManagerInterface;
-use Magento\Framework\App\Request\DataPersistorInterface;
-use Ampersand\Stores\Model\ResourceModel\Store\Collection;
 use Ampersand\Stores\Model\ResourceModel\Store\CollectionFactory;
+use Magento\Framework\App\Request\DataPersistorInterface;
+use Magento\Store\Model\StoreManagerInterface;
 
 class DataProvider extends \Magento\Ui\DataProvider\AbstractDataProvider
 {
-
     protected $collection;
     protected $dataPersistor;
     protected $loadedData;

@@ -31,6 +31,7 @@ class View extends Action
                 return $resultRedirect->setPath('*/');
             }
         }
+
         return $this->resultPageFactory->create();
     }
 }

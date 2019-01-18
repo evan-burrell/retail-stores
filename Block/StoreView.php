@@ -2,10 +2,10 @@
 
 namespace Ampersand\Stores\Block;
 
-use Magento\Catalog\Helper\Image;
 use Ampersand\Stores\Model\StoreFactory;
-use Magento\Framework\View\Element\Template\Context;
+use Magento\Catalog\Helper\Image;
 use Magento\Catalog\Model\ResourceModel\Product\CollectionFactory;
+use Magento\Framework\View\Element\Template\Context;
 
 class StoreView extends \Magento\Framework\View\Element\Template
 {
@@ -20,7 +20,7 @@ class StoreView extends \Magento\Framework\View\Element\Template
         CollectionFactory $collectionFactory,
         Image $imageHelper,
 
-        array $data = array()
+        array $data = []
     ) {
         $this->_storeFactory = $storeFactory;
         $this->collectionFactory = $collectionFactory;
@@ -43,6 +43,7 @@ class StoreView extends \Magento\Framework\View\Element\Template
         $collection->addAttributeToFilter('retail_store', $this->getRequest()->getParam('store_id'));
         $collection->setPageSize($pageSize);
         $collection->setCurPage($page);
+
         return $collection;
     }
 
@@ -57,6 +58,7 @@ class StoreView extends \Magento\Framework\View\Element\Template
         if ($opening < $currentTime && $currentTime < $closing) {
             return true;
         }
+
         return false;
     }
 
@@ -67,12 +69,13 @@ class StoreView extends \Magento\Framework\View\Element\Template
 
     public function formatPrice($price)
     {
-        return number_format((float)$price, 2, '.', '');
+        return number_format((float) $price, 2, '.', '');
     }
 
     public function getImageUrl($product, $imageWidth, $imageHeight)
     {
         $url = $this->imageHelper->init($product, 'product_page_image_small')->setImageFile($product->getFile())->resize($imageWidth, $imageHeight)->getUrl();
+
         return $url;
     }
 
@@ -81,10 +84,11 @@ class StoreView extends \Magento\Framework\View\Element\Template
         parent::_prepareLayout();
         parent::_prepareLayout();
         if ($this->getProducts()) {
-            $pager = $this->getLayout()->createBlock('Magento\Theme\Block\Html\Pager', 'store.products')->setAvailableLimit(array(10 => 10, 20 => 20, 100 => 100))->setShowPerPage(true)->setCollection($this->getProducts());
+            $pager = $this->getLayout()->createBlock('Magento\Theme\Block\Html\Pager', 'store.products')->setAvailableLimit([10 => 10, 20 => 20, 100 => 100])->setShowPerPage(true)->setCollection($this->getProducts());
             $this->setChild('pager', $pager);
             $this->getProducts()->load();
         }
+
         return $this;
     }
 }
