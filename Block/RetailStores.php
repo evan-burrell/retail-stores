@@ -3,8 +3,8 @@
 namespace Ampersand\Stores\Block;
 
 use Ampersand\Stores\Model\StoreFactory;
-use Magento\Framework\View\Element\Template\Context;
 use Magento\Framework\View\Element\Template;
+use Magento\Framework\View\Element\Template\Context;
 
 class RetailStores extends Template
 {
@@ -13,9 +13,10 @@ class RetailStores extends Template
 
     /**
      * RetailStores constructor.
+     *
      * @param Magento\Framework\View\Element\Template\Context $context
-     * @param StoreFactory $storeFactory
-     * @param array $data
+     * @param StoreFactory                                    $storeFactory
+     * @param array                                           $data
      */
     public function __construct(Context $context, StoreFactory $storeFactory, array $data = [])
     {
@@ -33,6 +34,7 @@ class RetailStores extends Template
 
     /**
      * @param $storeId
+     *
      * @return string
      */
     public function getSingleStoreUrl($storeId)
@@ -42,6 +44,7 @@ class RetailStores extends Template
 
     /**
      * @param $time
+     *
      * @return string
      */
     public function formatHours($time)

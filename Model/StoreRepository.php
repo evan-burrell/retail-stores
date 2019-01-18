@@ -38,14 +38,15 @@ class StoreRepository implements StoreRepositoryInterface
 
     /**
      * StoreRepository constructor.
-     * @param ResourceStore $resource
-     * @param StoreFactory $storeFactory
-     * @param StoreInterfaceFactory $dataStoreFactory
-     * @param StoreCollectionFactory $storeCollectionFactory
+     *
+     * @param ResourceStore                 $resource
+     * @param StoreFactory                  $storeFactory
+     * @param StoreInterfaceFactory         $dataStoreFactory
+     * @param StoreCollectionFactory        $storeCollectionFactory
      * @param SearchResultsInterfaceFactory $searchResultsFactory
-     * @param DataObjectHelper $dataObjectHelper
-     * @param DataObjectProcessor $dataObjectProcessor
-     * @param StoreManagerInterface $storeManager
+     * @param DataObjectHelper              $dataObjectHelper
+     * @param DataObjectProcessor           $dataObjectProcessor
+     * @param StoreManagerInterface         $storeManager
      */
     public function __construct(
         ResourceStore $resource,
@@ -69,6 +70,7 @@ class StoreRepository implements StoreRepositoryInterface
 
     /**
      * @param StoreInterface $store
+     *
      * @return StoreInterface
      */
     public function save(StoreInterface $store)
@@ -87,6 +89,7 @@ class StoreRepository implements StoreRepositoryInterface
 
     /**
      * @param int $storeId
+     *
      * @return StoreInterface
      */
     public function getById($storeId)
@@ -103,6 +106,7 @@ class StoreRepository implements StoreRepositoryInterface
 
     /**
      * @param SearchCriteriaInterface|null $criteria
+     *
      * @return \Magento\Framework\Api\SearchResultsInterface
      */
     public function getList(SearchCriteriaInterface $criteria = null)
@@ -154,6 +158,7 @@ class StoreRepository implements StoreRepositoryInterface
 
     /**
      * @param StoreInterface $store
+     *
      * @return bool
      */
     public function delete(StoreInterface $store)
@@ -172,6 +177,7 @@ class StoreRepository implements StoreRepositoryInterface
 
     /**
      * @param int $storeId
+     *
      * @return bool
      */
     public function deleteById($storeId)

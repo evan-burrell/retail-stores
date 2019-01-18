@@ -15,6 +15,7 @@ class UpgradeData implements UpgradeDataInterface
 
     /**
      * UpgradeData constructor.
+     *
      * @param EavSetupFactory $eavSetupFactory
      */
     public function __construct(EavSetupFactory $eavSetupFactory)
@@ -24,7 +25,7 @@ class UpgradeData implements UpgradeDataInterface
 
     /**
      * @param ModuleDataSetupInterface $setup
-     * @param ModuleContextInterface $context
+     * @param ModuleContextInterface   $context
      */
     public function upgrade(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
     {
@@ -65,8 +66,8 @@ class UpgradeData implements UpgradeDataInterface
 
     /**
      * @param ModuleDataSetupInterface $setup
-     * @param string $attribute
-     * @param array $attributeSets
+     * @param string                   $attribute
+     * @param array                    $attributeSets
      */
     public function addProductStoreAttributeToAttributeSets(
         ModuleDataSetupInterface $setup,

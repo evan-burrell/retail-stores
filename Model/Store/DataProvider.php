@@ -17,14 +17,15 @@ class DataProvider extends \Magento\Ui\DataProvider\AbstractDataProvider
 
     /**
      * DataProvider constructor.
+     *
      * @param $name
      * @param $primaryFieldName
      * @param $requestFieldName
-     * @param CollectionFactory $collectionFactory
+     * @param CollectionFactory      $collectionFactory
      * @param DataPersistorInterface $dataPersistor
-     * @param StoreManagerInterface $storeManager
-     * @param array $meta
-     * @param array $data
+     * @param StoreManagerInterface  $storeManager
+     * @param array                  $meta
+     * @param array                  $data
      */
     public function __construct(
         $name,

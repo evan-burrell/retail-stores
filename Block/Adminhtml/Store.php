@@ -7,8 +7,7 @@ use Magento\Catalog\Api\Data\ProductInterface;
 use Magento\Framework\View\Element\Template\Context;
 
 /**
- * Class Store
- * @package Ampersand\Stores\Block
+ * Class Store.
  */
 class Store extends \Magento\Framework\View\Element\Template
 {
@@ -17,9 +16,10 @@ class Store extends \Magento\Framework\View\Element\Template
 
     /**
      * Store constructor.
+     *
      * @param Magento\Framework\View\Element\Template\Context $context
-     * @param Ampersand\Stores\Model\StoreRepository $storeRepository
-     * @param array $data
+     * @param Ampersand\Stores\Model\StoreRepository          $storeRepository
+     * @param array                                           $data
      */
     public function __construct(Context $context, StoreRepository $storeRepository, array $data = [])
     {
@@ -29,6 +29,7 @@ class Store extends \Magento\Framework\View\Element\Template
 
     /**
      * @param Magento\Catalog\Api\Data\ProductInterface $product
+     *
      * @return \Ampersand\Stores\Api\Data\StoreInterface|void
      */
     public function getStore(ProductInterface $product)

@@ -16,11 +16,12 @@ class StoreActions extends \Magento\Ui\Component\Listing\Columns\Column
 
     /**
      * StoreActions constructor.
-     * @param ContextInterface $context
+     *
+     * @param ContextInterface   $context
      * @param UiComponentFactory $uiComponentFactory
-     * @param UrlInterface $urlBuilder
-     * @param array $components
-     * @param array $data
+     * @param UrlInterface       $urlBuilder
+     * @param array              $components
+     * @param array              $data
      */
     public function __construct(
         ContextInterface $context,

@@ -22,6 +22,7 @@ class Store extends AbstractModel implements StoreInterface
 
     /**
      * @param $storeId
+     *
      * @return StoreInterface
      */
     public function setStoreId($storeId)
@@ -39,6 +40,7 @@ class Store extends AbstractModel implements StoreInterface
 
     /**
      * @param $name
+     *
      * @return StoreInterface
      */
     public function setName($name)
@@ -56,6 +58,7 @@ class Store extends AbstractModel implements StoreInterface
 
     /**
      * @param $addressLine_1
+     *
      * @return StoreInterface
      */
     public function setAddressLine1($addressLine_1)
@@ -73,6 +76,7 @@ class Store extends AbstractModel implements StoreInterface
 
     /**
      * @param $addressLine_2
+     *
      * @return StoreInterface
      */
     public function setAddressLine2($addressLine_2)
@@ -90,6 +94,7 @@ class Store extends AbstractModel implements StoreInterface
 
     /**
      * @param $postcode
+     *
      * @return StoreInterface
      */
     public function setPostcode($postcode)
@@ -107,6 +112,7 @@ class Store extends AbstractModel implements StoreInterface
 
     /**
      * @param $latitude
+     *
      * @return StoreInterface
      */
     public function setLatitude($latitude)
@@ -124,6 +130,7 @@ class Store extends AbstractModel implements StoreInterface
 
     /**
      * @param $longitude
+     *
      * @return StoreInterface
      */
     public function setLongitude($longitude)
@@ -141,6 +148,7 @@ class Store extends AbstractModel implements StoreInterface
 
     /**
      * @param $opening
+     *
      * @return StoreInterface
      */
     public function setOpening($opening)
@@ -158,6 +166,7 @@ class Store extends AbstractModel implements StoreInterface
 
     /**
      * @param $closing
+     *
      * @return StoreInterface
      */
     public function setClosing($closing)

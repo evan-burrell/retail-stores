@@ -5,8 +5,7 @@ namespace Ampersand\Stores\Block\Adminhtml\Store\Edit;
 use Magento\Framework\View\Element\UiComponent\Control\ButtonProviderInterface;
 
 /**
- * Class SaveButton
- * @package Ampersand\Stores\Block\Adminhtml\Store\Edit
+ * Class SaveButton.
  */
 class SaveButton extends GenericButton implements ButtonProviderInterface
 {

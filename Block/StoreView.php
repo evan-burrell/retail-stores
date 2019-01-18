@@ -19,11 +19,12 @@ class StoreView extends \Magento\Framework\View\Element\Template
 
     /**
      * StoreView constructor.
-     * @param \Magento\Framework\View\Element\Template\Context $context
-     * @param \Ampersand\Stores\Model\StoreFactory $storeFactory
+     *
+     * @param \Magento\Framework\View\Element\Template\Context               $context
+     * @param \Ampersand\Stores\Model\StoreFactory                           $storeFactory
      * @param \Magento\Catalog\Model\ResourceModel\Product\CollectionFactory $collectionFactory
-     * @param \Magento\Catalog\Helper\Image $imageHelper
-     * @param array $data
+     * @param \Magento\Catalog\Helper\Image                                  $imageHelper
+     * @param array                                                          $data
      */
     public function __construct(
         Context $context,
@@ -66,6 +67,7 @@ class StoreView extends \Magento\Framework\View\Element\Template
 
     /**
      * @param $time
+     *
      * @return string
      */
     public function formatHours($time)
@@ -76,6 +78,7 @@ class StoreView extends \Magento\Framework\View\Element\Template
     /**
      * @param $opening
      * @param $closing
+     *
      * @return bool
      */
     public function isOpen($opening, $closing)
@@ -98,6 +101,7 @@ class StoreView extends \Magento\Framework\View\Element\Template
 
     /**
      * @param $price
+     *
      * @return string
      */
     public function formatPrice($price)
@@ -109,6 +113,7 @@ class StoreView extends \Magento\Framework\View\Element\Template
      * @param $product
      * @param $imageWidth
      * @param $imageHeight
+     *
      * @return string
      */
     public function getImageUrl($product, $imageWidth, $imageHeight)

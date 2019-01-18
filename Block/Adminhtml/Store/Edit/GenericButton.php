@@ -5,8 +5,7 @@ namespace Ampersand\Stores\Block\Adminhtml\Store\Edit;
 use Magento\Backend\Block\Widget\Context;
 
 /**
- * Class GenericButton
- * @package Ampersand\Stores\Block\Adminhtml\Store\Edit
+ * Class GenericButton.
  */
 abstract class GenericButton
 {
@@ -15,6 +14,7 @@ abstract class GenericButton
 
     /**
      * GenericButton constructor.
+     *
      * @param \Magento\Backend\Block\Widget\Context $context
      */
     public function __construct(Context $context)
@@ -32,7 +32,8 @@ abstract class GenericButton
 
     /**
      * @param string $route
-     * @param array $params
+     * @param array  $params
+     *
      * @return string
      */
     public function getUrl($route = '', $params = [])

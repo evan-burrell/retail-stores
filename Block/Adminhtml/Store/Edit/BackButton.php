@@ -5,8 +5,7 @@ namespace Ampersand\Stores\Block\Adminhtml\Store\Edit;
 use Magento\Framework\View\Element\UiComponent\Control\ButtonProviderInterface;
 
 /**
- * Class BackButton
- * @package Ampersand\Stores\Block\Adminhtml\Store\Edit
+ * Class BackButton.
  */
 class BackButton extends GenericButton implements ButtonProviderInterface
 {
