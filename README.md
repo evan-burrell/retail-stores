@@ -1,5 +1,7 @@
 # Magento 2 Retail Stores Module
 
+https://styleci.io/repos/166373868/shield
+
 ## Stores:
 Magento module that shows a static list of retail stores.
 * A Store entity has been created.
