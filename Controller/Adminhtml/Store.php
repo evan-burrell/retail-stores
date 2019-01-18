@@ -2,11 +2,11 @@
 
 namespace Ampersand\Stores\Controller\Adminhtml;
 
+use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
 use Magento\Backend\Model\View\Result\ForwardFactory;
 use Magento\Framework\Registry;
 use Magento\Framework\View\Result\PageFactory;
-use Magento\Backend\App\Action;
 
 abstract class Store extends Action
 {
@@ -21,9 +21,10 @@ abstract class Store extends Action
 
     /**
      * Store constructor.
-     * @param \Magento\Backend\App\Action\Context $context
-     * @param \Magento\Framework\Registry $coreRegistry
-     * @param \Magento\Framework\View\Result\PageFactory $resultPageFactory
+     *
+     * @param \Magento\Backend\App\Action\Context               $context
+     * @param \Magento\Framework\Registry                       $coreRegistry
+     * @param \Magento\Framework\View\Result\PageFactory        $resultPageFactory
      * @param \Magento\Backend\Model\View\Result\ForwardFactory $resultForwardFactory
      */
     public function __construct(
@@ -40,6 +41,7 @@ abstract class Store extends Action
 
     /**
      * @param $resultPage
+     *
      * @return \Magento\Framework\Controller\ResultInterface
      */
     public function initPage($resultPage)

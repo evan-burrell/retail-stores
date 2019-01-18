@@ -11,6 +11,7 @@ class OptionsProvider implements OptionSourceInterface
 
     /**
      * OptionsProvider constructor.
+     *
      * @param Registry $typeRegistry
      */
     public function __construct(Registry $typeRegistry)

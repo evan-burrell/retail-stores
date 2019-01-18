@@ -10,7 +10,7 @@ use Magento\Framework\Setup\SchemaSetupInterface;
 class InstallSchema implements InstallSchemaInterface
 {
     /**
-     * @param SchemaSetupInterface $setup
+     * @param SchemaSetupInterface   $setup
      * @param ModuleContextInterface $context
      */
     public function install(SchemaSetupInterface $setup, ModuleContextInterface $context)

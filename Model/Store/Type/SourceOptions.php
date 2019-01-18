@@ -15,7 +15,8 @@ class SourceOptions extends AbstractSource
 
     /**
      * SourceOptions constructor.
-     * @param \Ampersand\Stores\Model\StoreRepository $storeRepository
+     *
+     * @param \Ampersand\Stores\Model\StoreRepository                  $storeRepository
      * @param \Magento\Eav\Model\ResourceModel\Entity\AttributeFactory $eavAttrEntity
      */
     public function __construct(

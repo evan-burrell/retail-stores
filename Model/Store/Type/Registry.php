@@ -9,6 +9,7 @@ class Registry
 
     /**
      * Registry constructor.
+     *
      * @param array $types
      */
     public function __construct(array $types = [])

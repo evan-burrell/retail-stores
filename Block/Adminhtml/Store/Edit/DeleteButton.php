@@ -5,8 +5,7 @@ namespace Ampersand\Stores\Block\Adminhtml\Store\Edit;
 use Magento\Framework\View\Element\UiComponent\Control\ButtonProviderInterface;
 
 /**
- * Class DeleteButton
- * @package Ampersand\Stores\Block\Adminhtml\Store\Edit
+ * Class DeleteButton.
  */
 class DeleteButton extends GenericButton implements ButtonProviderInterface
 {
