@@ -25,7 +25,7 @@ class Store extends \Magento\Framework\View\Element\Template
             : null;
 
         if (!$storeId) {
-            return null;
+            return;
         }
 
         $store = $this->storeRepository->getById($storeId);

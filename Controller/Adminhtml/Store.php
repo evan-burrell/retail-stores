@@ -2,10 +2,10 @@
 
 namespace Ampersand\Stores\Controller\Adminhtml;
 
-use Magento\Framework\Registry;
 use Magento\Backend\App\Action\Context;
-use Magento\Framework\View\Result\PageFactory;
 use Magento\Backend\Model\View\Result\ForwardFactory;
+use Magento\Framework\Registry;
+use Magento\Framework\View\Result\PageFactory;
 
 abstract class Store extends \Magento\Backend\App\Action
 {

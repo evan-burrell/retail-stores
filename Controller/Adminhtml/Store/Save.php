@@ -3,8 +3,8 @@
 namespace Ampersand\Stores\Controller\Adminhtml\Store;
 
 use Magento\Backend\App\Action\Context;
-use Magento\Framework\Exception\LocalizedException;
 use Magento\Framework\App\Request\DataPersistorInterface;
+use Magento\Framework\Exception\LocalizedException;
 
 class Save extends \Magento\Backend\App\Action
 {
@@ -49,7 +49,6 @@ class Save extends \Magento\Backend\App\Action
             }
 
             return $resultRedirect->setPath('*/*/');
-
         } catch (LocalizedException $e) {
             $this->messageManager->addErrorMessage($e->getMessage());
         } catch (\Exception $e) {

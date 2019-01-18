@@ -2,14 +2,12 @@
 
 namespace Ampersand\Stores\Model\Store\Type;
 
+use Ampersand\Stores\Model\StoreRepository;
 use Magento\Eav\Model\Entity\Attribute\Source\AbstractSource;
 use Magento\Eav\Model\ResourceModel\Entity\AttributeFactory;
-use Ampersand\Stores\Api\Data\StoreInterface;
-use Ampersand\Stores\Model\StoreRepository;
 
 class SourceOptions extends AbstractSource
 {
-
     private $storeRepository;
     private $eavAttrEntity;
 
@@ -45,9 +43,9 @@ class SourceOptions extends AbstractSource
 
         return [
             $attributeCode => [
-                'default' => null,
-                'extra' => null,
-                'type' => \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
+                'default'  => null,
+                'extra'    => null,
+                'type'     => \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
                 'nullable' => true,
             ],
         ];
@@ -55,11 +53,11 @@ class SourceOptions extends AbstractSource
 
     /**
      * @param int $store
+     *
      * @return \Magento\Framework\DB\Select
      */
     public function getFlatUpdateSelect($store)
     {
         return $this->eavAttrEntity->create()->getFlatUpdateSelect($this->getAttribute(), $store);
-
     }
 }

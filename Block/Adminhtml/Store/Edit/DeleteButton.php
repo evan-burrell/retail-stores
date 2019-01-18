@@ -11,14 +11,15 @@ class DeleteButton extends GenericButton implements ButtonProviderInterface
         $data = [];
         if ($this->getModelId()) {
             $data = [
-                'label' => __('Delete Store'),
-                'class' => 'delete',
-                'on_click' => 'deleteConfirm(\'' . __(
+                'label'    => __('Delete Store'),
+                'class'    => 'delete',
+                'on_click' => 'deleteConfirm(\''.__(
                     'Are you sure you want to do this?'
-                ) . '\', \'' . $this->getDeleteUrl() . '\')',
+                ).'\', \''.$this->getDeleteUrl().'\')',
                 'sort_order' => 20,
             ];
         }
+
         return $data;
     }
 

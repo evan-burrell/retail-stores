@@ -14,6 +14,7 @@ class Edit extends \Ampersand\Stores\Controller\Adminhtml\Store
             if (!$model->getId()) {
                 $this->messageManager->addErrorMessage(__('This store no longer exists.'));
                 $resultRedirect = $this->resultRedirectFactory->create();
+
                 return $resultRedirect->setPath('*/*/');
             }
         }
@@ -23,8 +24,9 @@ class Edit extends \Ampersand\Stores\Controller\Adminhtml\Store
             $id ? __('Edit Store') : __('New Store'),
             $id ? __('Edit Store') : __('New Store')
         );
-        $resultPage->getConfig()->getTitle()->prepend(__("Retail Stores"));
+        $resultPage->getConfig()->getTitle()->prepend(__('Retail Stores'));
         $resultPage->getConfig()->getTitle()->prepend($model->getId() ? $model->getName() : __('New Store'));
+
         return $resultPage;
     }
 }
