@@ -10,10 +10,21 @@ use Magento\Framework\View\Element\Template\Context;
 class StoreView extends \Magento\Framework\View\Element\Template
 {
     const DEFAULT_PAGE_SIZE = 10;
+    /** @var \Ampersand\Stores\Model\StoreFactory */
     private $_storeFactory;
+    /** @var \Magento\Catalog\Model\ResourceModel\Product\CollectionFactory */
     private $collectionFactory;
+    /** @var \Magento\Catalog\Helper\Image */
     private $imageHelper;
 
+    /**
+     * StoreView constructor.
+     * @param \Magento\Framework\View\Element\Template\Context $context
+     * @param \Ampersand\Stores\Model\StoreFactory $storeFactory
+     * @param \Magento\Catalog\Model\ResourceModel\Product\CollectionFactory $collectionFactory
+     * @param \Magento\Catalog\Helper\Image $imageHelper
+     * @param array $data
+     */
     public function __construct(
         Context $context,
         StoreFactory $storeFactory,
@@ -28,11 +39,17 @@ class StoreView extends \Magento\Framework\View\Element\Template
         parent::__construct($context, $data);
     }
 
+    /**
+     * @return array
+     */
     public function getCollection()
     {
         return $this->_storeFactory->create()->getCollection()->addFieldToFilter('store_id', $this->getRequest()->getParam('store_id'));
     }
 
+    /**
+     * @return array
+     */
     public function getProducts()
     {
         $page = ($this->getRequest()->getParam('p')) ? $this->getRequest()->getParam('p') : 1;
@@ -47,11 +64,20 @@ class StoreView extends \Magento\Framework\View\Element\Template
         return $collection;
     }
 
+    /**
+     * @param $time
+     * @return string
+     */
     public function formatHours($time)
     {
         return date('H:i', strtotime($time));
     }
 
+    /**
+     * @param $opening
+     * @param $closing
+     * @return bool
+     */
     public function isOpen($opening, $closing)
     {
         $currentTime = date('H:i');
@@ -62,16 +88,29 @@ class StoreView extends \Magento\Framework\View\Element\Template
         return false;
     }
 
+    /**
+     * @return string
+     */
     public function getPagerHtml()
     {
         return $this->getChildHtml('pager');
     }
 
+    /**
+     * @param $price
+     * @return string
+     */
     public function formatPrice($price)
     {
         return number_format((float) $price, 2, '.', '');
     }
 
+    /**
+     * @param $product
+     * @param $imageWidth
+     * @param $imageHeight
+     * @return string
+     */
     public function getImageUrl($product, $imageWidth, $imageHeight)
     {
         $url = $this->imageHelper->init($product, 'product_page_image_small')->setImageFile($product->getFile())->resize($imageWidth, $imageHeight)->getUrl();
@@ -79,6 +118,9 @@ class StoreView extends \Magento\Framework\View\Element\Template
         return $url;
     }
 
+    /**
+     * @return $this
+     */
     public function _prepareLayout()
     {
         parent::_prepareLayout();

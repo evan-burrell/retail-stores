@@ -10,13 +10,22 @@ use Magento\Framework\Setup\UpgradeDataInterface;
 
 class UpgradeData implements UpgradeDataInterface
 {
+    /** @var EavSetupFactory */
     private $eavSetupFactory;
 
+    /**
+     * UpgradeData constructor.
+     * @param EavSetupFactory $eavSetupFactory
+     */
     public function __construct(EavSetupFactory $eavSetupFactory)
     {
         $this->eavSetupFactory = $eavSetupFactory;
     }
 
+    /**
+     * @param ModuleDataSetupInterface $setup
+     * @param ModuleContextInterface $context
+     */
     public function upgrade(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
     {
         if (version_compare($context->getVersion(), '1.1.0', '<')) {
@@ -29,6 +38,9 @@ class UpgradeData implements UpgradeDataInterface
         }
     }
 
+    /**
+     * @param ModuleDataSetupInterface $setup
+     */
     private function createProductStoreAttribute(ModuleDataSetupInterface $setup)
     {
         /** @var \Magento\Eav\Setup\EavSetup $eavSetup */
@@ -51,6 +63,11 @@ class UpgradeData implements UpgradeDataInterface
         );
     }
 
+    /**
+     * @param ModuleDataSetupInterface $setup
+     * @param string $attribute
+     * @param array $attributeSets
+     */
     public function addProductStoreAttributeToAttributeSets(
         ModuleDataSetupInterface $setup,
         string $attribute,

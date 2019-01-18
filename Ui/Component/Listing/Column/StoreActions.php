@@ -11,8 +11,17 @@ class StoreActions extends \Magento\Ui\Component\Listing\Columns\Column
     const URL_PATH_DELETE = 'ampersand_stores/store/delete';
     const URL_PATH_DETAILS = 'ampersand_stores/store/details';
 
+    /** @var UrlInterface */
     protected $urlBuilder;
 
+    /**
+     * StoreActions constructor.
+     * @param ContextInterface $context
+     * @param UiComponentFactory $uiComponentFactory
+     * @param UrlInterface $urlBuilder
+     * @param array $components
+     * @param array $data
+     */
     public function __construct(
         ContextInterface $context,
         UiComponentFactory $uiComponentFactory,

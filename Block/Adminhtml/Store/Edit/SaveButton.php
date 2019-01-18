@@ -4,8 +4,15 @@ namespace Ampersand\Stores\Block\Adminhtml\Store\Edit;
 
 use Magento\Framework\View\Element\UiComponent\Control\ButtonProviderInterface;
 
+/**
+ * Class SaveButton
+ * @package Ampersand\Stores\Block\Adminhtml\Store\Edit
+ */
 class SaveButton extends GenericButton implements ButtonProviderInterface
 {
+    /**
+     * @return array
+     */
     public function getButtonData()
     {
         return [

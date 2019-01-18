@@ -8,14 +8,23 @@ use Magento\Framework\Exception\LocalizedException;
 
 class Save extends \Magento\Backend\App\Action
 {
+    /** @var \Magento\Framework\App\Request\DataPersistorInterface */
     protected $dataPersistor;
 
+    /**
+     * Save constructor.
+     * @param \Magento\Backend\App\Action\Context $context
+     * @param \Magento\Framework\App\Request\DataPersistorInterface; $dataPersistor
+     */
     public function __construct(Context $context, DataPersistorInterface $dataPersistor)
     {
         $this->dataPersistor = $dataPersistor;
         parent::__construct($context);
     }
 
+    /**
+     * @return \Magento\Framework\Controller\ResultInterface
+     */
     public function execute()
     {
         $resultRedirect = $this->resultRedirectFactory->create();

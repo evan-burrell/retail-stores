@@ -1,110 +1,112 @@
 <style>
-  h1 {
-    margin-bottom: 0px;
-  }
+    h1 {
+        margin-bottom: 0px;
+    }
 
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .title {
-    align-self: start;
-    align-items: start;
-  }
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
 
-  .product-image {
-    align-self: center;
-    margin-bottom: 1rem;
-  }
+    .title {
+        align-self: start;
+        align-items: start;
+    }
 
-  .price {
-    align-self: end;
-  }
+    .product-image {
+        align-self: center;
+        margin-bottom: 1rem;
+    }
 
-  .product {
-    padding: 1.5rem;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
-    margin: 1rem;
-  }
+    .price {
+        align-self: end;
+    }
 
-  .row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 2rem;
-  }
+    .product {
+        padding: 1.5rem;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+        margin: 1rem;
+    }
 
-  .open {
-    border: 2px green;
-    background: green;
-    padding: 0.75rem 1rem;
-    border-radius: 0.25rem;
-    color: white;
-  }
+    .row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+    }
 
-  .closed {
-    border: 2px red;
-    background: red;
-    padding: 0.75rem 1rem;
-    border-radius: 0.25rem;
-    color: white;
-  }
+    .open {
+        border: 2px green;
+        background: green;
+        padding: 0.75rem 1rem;
+        border-radius: 0.25rem;
+        color: white;
+    }
 
-  p {
-    margin-top: 2rem;
-  }
+    .closed {
+        border: 2px red;
+        background: red;
+        padding: 0.75rem 1rem;
+        border-radius: 0.25rem;
+        color: white;
+    }
+
+    p {
+        margin-top: 2rem;
+    }
 </style>
 
 <?php
 $store = $this->getCollection()->getFirstItem()->getData();
-$products = $this->getProducts(); $opening = $this->formatHours($store['opening']);
-$closing= $this->formatHours($store['closing']);
+$products = $this->getProducts();
+$opening = $this->formatHours($store['opening']);
+$closing = $this->formatHours($store['closing']);
 ?>
 
 <div class="store-info">
-  <div class="row">
-    <h1><?php echo $store['name'] ?></h1>
-    <?php $baseUrl = "https://www.google.com/maps/search/?api=1&query={$store['latitude']},{$store['longitude']}" ?>
-    <a href="<?php echo $baseUrl ?>"
-      ><img src="https://img.icons8.com/medium/32/000000/marker.png"
-    /></a>
-  </div>
-
-  <div>
-    <?php if ($this->isOpen($opening, $closing)) : ?>
-    <span class="open"> Open </span>
-    <?php else : ?>
-    <span class="closed"> Closed </span>
-    <?php endif ?>
-    <p>
-      Hours:
-      <?php echo $opening ?>
-      -
-      <?php echo $closing ?>
-    </p>
-  </div>
-
-  <div class="grid">
-    <?php foreach ($products as $product) : ?>
-    <div class="product">
-      <a href="<?php echo $product->getProductUrl() ?>">
-        <h2 class="title"><?php echo $product->getName() ?></h2>
-      </a>
-      <img
-        src="<?php echo $this->getImageUrl($product, 400, 400) ?>"
-        alt="product-image"
-        class="product-image"
-      />
-      <div class="price">
-        <?php echo '$' . $this->formatPrice($product->getPrice()); ?>
-      </div>
+    <div class="row">
+        <h1><?php echo $store['name'] ?></h1>
+        <?php $baseUrl = "https://www.google.com/maps/search/?api=1&query={$store['latitude']},{$store['longitude']}" ?>
+        <a href="<?php echo $baseUrl ?>"
+        ><img src="https://img.icons8.com/medium/32/000000/marker.png"
+            /></a>
     </div>
-    <?php endforeach ?>
-  </div>
 
-  <?php if ($this->getPagerHtml()) : ?>
-  <div class="order-products-toolbar toolbar bottom">
-    <?php echo $this->getPagerHtml(); ?>
-  </div>
-  <?php endif ?>
+    <div>
+        <?php if ($this->isOpen($opening, $closing)) : ?>
+            <span class="open"> Open </span>
+        <?php else : ?>
+            <span class="closed"> Closed </span>
+        <?php endif ?>
+        <p>
+            Hours:
+            <?php echo $opening ?>
+            -
+            <?php echo $closing ?>
+        </p>
+    </div>
+
+    <div class="grid">
+        <?php foreach ($products as $product) : ?>
+            <div class="product">
+                <a href="<?php echo $product->getProductUrl() ?>">
+                    <h2 class="title"><?php echo $product->getName() ?></h2>
+                </a>
+                <img
+                        src="<?php echo $this->getImageUrl($product, 400, 400) ?>"
+                        alt="product-image"
+                        class="product-image"
+                />
+                <div class="price">
+                    <?php echo '$' . $this->formatPrice($product->getPrice()); ?>
+                </div>
+            </div>
+        <?php endforeach ?>
+    </div>
+
+    <?php if ($this->getPagerHtml()) : ?>
+        <div class="order-products-toolbar toolbar bottom">
+            <?php echo $this->getPagerHtml(); ?>
+        </div>
+    <?php endif ?>
 </div>

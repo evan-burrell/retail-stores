@@ -4,8 +4,15 @@ namespace Ampersand\Stores\Block\Adminhtml\Store\Edit;
 
 use Magento\Framework\View\Element\UiComponent\Control\ButtonProviderInterface;
 
+/**
+ * Class BackButton
+ * @package Ampersand\Stores\Block\Adminhtml\Store\Edit
+ */
 class BackButton extends GenericButton implements ButtonProviderInterface
 {
+    /**
+     * @return array
+     */
     public function getButtonData()
     {
         return [
@@ -16,6 +23,9 @@ class BackButton extends GenericButton implements ButtonProviderInterface
         ];
     }
 
+    /**
+     * @return string
+     */
     public function getBackUrl()
     {
         return $this->getUrl('*/*/');

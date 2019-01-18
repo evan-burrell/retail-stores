@@ -4,8 +4,15 @@ namespace Ampersand\Stores\Block\Adminhtml\Store\Edit;
 
 use Magento\Framework\View\Element\UiComponent\Control\ButtonProviderInterface;
 
+/**
+ * Class DeleteButton
+ * @package Ampersand\Stores\Block\Adminhtml\Store\Edit
+ */
 class DeleteButton extends GenericButton implements ButtonProviderInterface
 {
+    /**
+     * @return array
+     */
     public function getButtonData()
     {
         $data = [];
@@ -23,6 +30,9 @@ class DeleteButton extends GenericButton implements ButtonProviderInterface
         return $data;
     }
 
+    /**
+     * @return string
+     */
     public function getDeleteUrl()
     {
         return $this->getUrl('*/*/delete', ['Store_id' => $this->getModelId()]);

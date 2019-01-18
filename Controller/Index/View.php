@@ -8,14 +8,23 @@ use Magento\Framework\View\Result\PageFactory;
 
 class View extends Action
 {
+    /** @var \Magento\Framework\View\Result\PageFactory */
     protected $resultPageFactory;
 
+    /**
+     * View constructor.
+     * @param \Magento\Framework\App\Action\Context $context
+     * @param \Magento\Framework\View\Result\PageFactory $resultPageFactory
+     */
     public function __construct(Context $context, PageFactory $resultPageFactory)
     {
         $this->resultPageFactory = $resultPageFactory;
         parent::__construct($context);
     }
 
+    /**
+     * @return \Magento\Framework\View\Result\PageFactory
+     */
     public function execute()
     {
         $id = $this->getRequest()->getParam('store_id');

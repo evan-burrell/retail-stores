@@ -8,11 +8,24 @@ use Magento\Store\Model\StoreManagerInterface;
 
 class DataProvider extends \Magento\Ui\DataProvider\AbstractDataProvider
 {
+    /** @var \Ampersand\Stores\Model\ResourceModel\Store\CollectionFactory */
     protected $collection;
+    /** @var \Magento\Framework\App\Request\DataPersistorInterface */
     protected $dataPersistor;
-    protected $loadedData;
+    /** @var StoreManagerInterface */
     protected $storeManager;
 
+    /**
+     * DataProvider constructor.
+     * @param $name
+     * @param $primaryFieldName
+     * @param $requestFieldName
+     * @param CollectionFactory $collectionFactory
+     * @param DataPersistorInterface $dataPersistor
+     * @param StoreManagerInterface $storeManager
+     * @param array $meta
+     * @param array $data
+     */
     public function __construct(
         $name,
         $primaryFieldName,
@@ -29,6 +42,9 @@ class DataProvider extends \Magento\Ui\DataProvider\AbstractDataProvider
         parent::__construct($name, $primaryFieldName, $requestFieldName, $meta, $data);
     }
 
+    /**
+     * @return \Magento\Framework\App\Request\DataPersistorInterface
+     */
     public function getData()
     {
         if (isset($this->loadedData)) {

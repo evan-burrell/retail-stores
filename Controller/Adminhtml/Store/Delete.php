@@ -4,6 +4,9 @@ namespace Ampersand\Stores\Controller\Adminhtml\Store;
 
 class Delete extends \Ampersand\Stores\Controller\Adminhtml\Store
 {
+    /**
+     * @return \Magento\Framework\Controller\ResultInterface
+     */
     public function execute()
     {
         $resultRedirect = $this->resultRedirectFactory->create();

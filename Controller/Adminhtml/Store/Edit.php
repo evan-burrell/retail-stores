@@ -4,6 +4,9 @@ namespace Ampersand\Stores\Controller\Adminhtml\Store;
 
 class Edit extends \Ampersand\Stores\Controller\Adminhtml\Store
 {
+    /**
+     * @return \Magento\Framework\Controller\ResultInterface
+     */
     public function execute()
     {
         $id = $this->getRequest()->getParam('store_id');

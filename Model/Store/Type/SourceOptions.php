@@ -8,9 +8,16 @@ use Magento\Eav\Model\ResourceModel\Entity\AttributeFactory;
 
 class SourceOptions extends AbstractSource
 {
+    /** @var \Ampersand\Stores\Model\StoreRepository */
     private $storeRepository;
+    /** @var \Magento\Eav\Model\ResourceModel\Entity\AttributeFactory */
     private $eavAttrEntity;
 
+    /**
+     * SourceOptions constructor.
+     * @param \Ampersand\Stores\Model\StoreRepository $storeRepository
+     * @param \Magento\Eav\Model\ResourceModel\Entity\AttributeFactory $eavAttrEntity
+     */
     public function __construct(
         StoreRepository $storeRepository,
         AttributeFactory $eavAttrEntity
@@ -37,6 +44,9 @@ class SourceOptions extends AbstractSource
         return $this->_options;
     }
 
+    /**
+     * @return array
+     */
     public function getFlatColumns()
     {
         $attributeCode = $this->getAttribute()->getAttributeCode();

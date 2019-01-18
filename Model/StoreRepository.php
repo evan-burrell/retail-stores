@@ -19,15 +19,34 @@ use Magento\Store\Model\StoreManagerInterface;
 
 class StoreRepository implements StoreRepositoryInterface
 {
+    /** @var ResourceStore */
     protected $resource;
+    /** @var StoreFactory */
     protected $storeFactory;
+    /** @var StoreCollectionFactory */
     protected $storeCollectionFactory;
+    /** @var SearchResultsInterfaceFactory */
     protected $searchResultsFactory;
+    /** @var DataObjectHelper */
     protected $dataObjectHelper;
+    /** @var DataObjectProcessor */
     protected $dataObjectProcessor;
+    /** @var StoreInterfaceFactory */
     protected $dataStoreFactory;
+    /** @var StoreManagerInterface */
     private $storeManager;
 
+    /**
+     * StoreRepository constructor.
+     * @param ResourceStore $resource
+     * @param StoreFactory $storeFactory
+     * @param StoreInterfaceFactory $dataStoreFactory
+     * @param StoreCollectionFactory $storeCollectionFactory
+     * @param SearchResultsInterfaceFactory $searchResultsFactory
+     * @param DataObjectHelper $dataObjectHelper
+     * @param DataObjectProcessor $dataObjectProcessor
+     * @param StoreManagerInterface $storeManager
+     */
     public function __construct(
         ResourceStore $resource,
         StoreFactory $storeFactory,
@@ -48,6 +67,10 @@ class StoreRepository implements StoreRepositoryInterface
         $this->storeManager = $storeManager;
     }
 
+    /**
+     * @param StoreInterface $store
+     * @return StoreInterface
+     */
     public function save(StoreInterface $store)
     {
         try {
@@ -62,6 +85,10 @@ class StoreRepository implements StoreRepositoryInterface
         return $store;
     }
 
+    /**
+     * @param int $storeId
+     * @return StoreInterface
+     */
     public function getById($storeId)
     {
         $store = $this->storeFactory->create();
@@ -74,6 +101,10 @@ class StoreRepository implements StoreRepositoryInterface
         return $store;
     }
 
+    /**
+     * @param SearchCriteriaInterface|null $criteria
+     * @return \Magento\Framework\Api\SearchResultsInterface
+     */
     public function getList(SearchCriteriaInterface $criteria = null)
     {
         $collection = $this->storeCollectionFactory->create();
@@ -121,6 +152,10 @@ class StoreRepository implements StoreRepositoryInterface
         return $searchResults;
     }
 
+    /**
+     * @param StoreInterface $store
+     * @return bool
+     */
     public function delete(StoreInterface $store)
     {
         try {
@@ -135,6 +170,10 @@ class StoreRepository implements StoreRepositoryInterface
         return true;
     }
 
+    /**
+     * @param int $storeId
+     * @return bool
+     */
     public function deleteById($storeId)
     {
         return $this->delete($this->getById($storeId));
