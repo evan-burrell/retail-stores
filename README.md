@@ -1,6 +1,6 @@
 # Magento 2 Retail Stores Module
 
-https://styleci.io/repos/166373868/shield
+![Style CI](https://styleci.io/repos/166373868/shield)
 
 ## Stores:
 Magento module that shows a static list of retail stores.
