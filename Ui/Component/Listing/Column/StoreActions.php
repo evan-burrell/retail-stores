@@ -4,6 +4,7 @@ namespace Ampersand\Stores\Ui\Component\Listing\Column;
 
 use Magento\Framework\UrlInterface;
 use Magento\Framework\View\Element\UiComponentFactory;
+use Magento\Framework\View\Element\UiComponent\ContextInterface;
 
 class StoreActions extends \Magento\Ui\Component\Listing\Columns\Column
 {
